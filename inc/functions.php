@@ -31,6 +31,15 @@ $quotes = array(
     var_dump($key);
 } */
 
-
 // Create the getRandomQuuote function and name it getRandomQuote
+function getRandomQuote($arr){
+    $quoteIndex = random_int(0, 4);
+    foreach ($arr as $key => $quote){
+        if ($quoteIndex === $key){
+            return $quote;
+        }
+    }
+}
+
+//echo getRandomQuote($quotes);
 // Create the printQuote funtion and name it printQuote
