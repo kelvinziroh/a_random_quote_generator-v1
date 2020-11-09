@@ -43,3 +43,12 @@ function getRandomQuote($arr){
 
 //echo getRandomQuote($quotes);
 // Create the printQuote funtion and name it printQuote
+function printQuote($arr){
+    $randomQuote = getRandomQuote($arr);
+    $quoteString = '';
+    $quoteString .= "<p class='quote'>" . $randomQuote['quote'] . '</p>';
+    $quoteString .= "<p class='source'>" . $randomQuote['source'] . '</p>';
+    echo $quoteString;
+}
+
+//printQuote($quotes);
