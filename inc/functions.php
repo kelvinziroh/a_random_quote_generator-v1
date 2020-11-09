@@ -37,10 +37,6 @@ $quotes = array(
     ),
 );
 
-/* foreach ($quotes as $key => $quote){
-    var_dump($key);
-} */
-
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote($arr){
     $quoteIndex = random_int(0, 4);
@@ -51,14 +47,31 @@ function getRandomQuote($arr){
     }
 }
 
-//echo getRandomQuote($quotes);
 // Create the printQuote funtion and name it printQuote
 function printQuote($arr){
     $randomQuote = getRandomQuote($arr);
     $quoteString = '';
-    $quoteString .= "<p class='quote'>" . $randomQuote['quote'] . "</p>";
-    $quoteString .= "<p class='source'>" . $randomQuote['source'] . "</p>";
+
+    if ($randomQuote['citation'] && $randomQuote['year']){  // Prints the quote citation and year if both are present 
+        $quoteString .= "<p class='quote'>" . $randomQuote['quote'] . "</p>";
+        $quoteString .= "<p class='source'>" . $randomQuote['source'];
+        $quoteString .= "<span class='citation'>" . $randomQuote['citation'] . "</span>";
+        $quoteString .= "<span class='year'>" . $randomQuote['year'] . "</span>";
+        $quoteString .= "</p>";
+    } else if ($randomQuote['citation']){ // Prints the quote citation if only citation is set
+        $quoteString .= "<p class='quote'>" . $randomQuote['quote'] . "</p>";
+        $quoteString .= "<p class='source'>" . $randomQuote['source'];
+        $quoteString .= "<span class='citation'>" . $randomQuote['citation'] . "</span>";
+        $quoteString .= "</p>";
+    } else if ($randomQuote['year']){ // Prints the quote year if only the year is set
+        $quoteString .= "<p class='quote'>" . $randomQuote['quote'] . "</p>";
+        $quoteString .= "<p class='source'>" . $randomQuote['source'];
+        $quoteString .= "<span class='year'>" . $randomQuote['year'] . "</span>";
+        $quoteString .= "</p>";
+    } else { // prints the quote and it's source if neither citation or date are given
+        $quoteString .= "<p class='quote'>" . $randomQuote['quote'] . "</p>";
+        $quoteString .= "<p class='source'>" . $randomQuote['source'] . "</p>";
+    }
+    
     echo $quoteString;
 }
-
-//printQuote($quotes);
