@@ -108,3 +108,16 @@ function printQuote($arr){
     
     echo $quoteString;
 }
+
+function setRandomBgColor(){
+    global $bgColors;
+    $colorIndex = random_int(0, 4);
+    foreach ($bgColors as $key => $color){
+        if ($colorIndex === $key){
+            return $color;
+        }
+    }
+}
+
+$randomColor = setRandomBgColor();
+
