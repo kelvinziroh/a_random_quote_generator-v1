@@ -31,15 +31,45 @@ $quotes = array(
     ),
     array(
         'quote' => 'Not all treasure is silver and gold, mate.',
-        'source' => 'Johnny Depp',
+        'source' => 'Johnny Depp (Capt. Jack Sparrow)',
         'citation' => 'Pirates of The Carribean: The Curse of the Black Pearl',
         'year' => '2003',
+    ),
+    array(
+        'quote' => 'It does not do well to dwell on dreams and forget to live.',
+        'source' => 'Albus Dumbledore',
+        'citation' => 'Harry Potter and The Sorcerer\'s Stone',
+        'year' => '2001',
+    ),
+    array(
+        'quote' => 'That there\'s some good in this world, Mr. Frodo… and it\'s worth fighting for.',
+        'source' => 'Samwise Gamgee',
+        'citation' => 'The Lord of the Rings: The Fellowship of the Ring',
+        'year' => '2001',
+    ),
+    array(
+        'quote' => 'There is only one who is all powerful, and his greatest weapon is love.',
+        'source' => 'Stan Lee',
+        'citation' => '',
+        'year' => '',
+    ),
+    array(
+        'quote' => 'Jarvis, sometimes you gotta run before you can walk.',
+        'source' => 'Robert Downey Jr (Tony Stark)',
+        'citation' => 'Iron Man',
+        'year' => '2008',
+    ),
+    array(
+        'quote' => 'Forget Unicorns. Startups Should Be Camels.',
+        'source' => 'Alex Lazarow',
+        'citation' => 'Out-Innovate',
+        'year' => '2020',
     ),
 );
 
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote($arr){
-    $quoteIndex = random_int(0, 4);
+    $quoteIndex = random_int(0, 9);
     foreach ($arr as $key => $quote){
         if ($quoteIndex === $key){
             return $quote;
