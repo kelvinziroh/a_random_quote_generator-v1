@@ -67,6 +67,9 @@ $quotes = array(
     ),
 );
 
+// Create an array of colors
+$bgColors = array('#f7ce68', '#fc00ff', '#00dbde', '#2b86c5', '#36b55c');
+
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote($arr){
     $quoteIndex = random_int(0, 9);
