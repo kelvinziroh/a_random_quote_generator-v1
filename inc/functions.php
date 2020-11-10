@@ -109,6 +109,7 @@ function printQuote($arr){
     echo $quoteString;
 }
 
+// Set a random background color 
 function setRandomBgColor(){
     global $bgColors;
     $colorIndex = random_int(0, 4);
@@ -119,5 +120,6 @@ function setRandomBgColor(){
     }
 }
 
+// Store the random color selected in a variable
 $randomColor = setRandomBgColor();
 
